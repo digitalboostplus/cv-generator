@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Upwork Proposal Generator
+
+An AI-powered web application that helps freelancers create professional, tailored proposals for Upwork jobs. The application uses OpenAI's GPT-4 to generate compelling proposals and includes visual workflow diagrams to help understand the application process.
+
+## Features
+
+- 🤖 AI-powered proposal generation using GPT-4
+- 📊 Visual workflow diagrams using Mermaid.js
+- 🎨 Customizable proposal tone and length
+- 📋 Easy copy-to-clipboard functionality
+- 🔒 Secure authentication system
+- 💅 Modern, responsive UI built with Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18.x or later
+- npm 9.x or later
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd upwork-proposal-generator
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Create a `.env` file in the root directory and add your environment variables:
+```env
+# Authentication
+JWT_SECRET=your-jwt-secret-key-here
+JWT_EXPIRES_IN=7d
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# OpenAI Configuration
+OPENAI_API_KEY=your-openai-api-key-here
 
-## Learn More
+# App Configuration
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Start the development server:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application will be available at `http://localhost:3000`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Usage
 
-## Deploy on Vercel
+1. Visit the application in your web browser
+2. Enter the job description you want to create a proposal for
+3. Customize the tone and length settings if desired
+4. Click "Generate Proposal" to create your tailored proposal
+5. Review the generated proposal and workflow diagram
+6. Copy the proposal to your clipboard and use it as a base for your Upwork application
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **AI**: OpenAI GPT-4
+- **Authentication**: JWT
+- **Form Handling**: React Hook Form + Zod
+- **Diagrams**: Mermaid.js
+- **UI Components**: Headless UI, Heroicons
+
+## Project Structure
+
+```
+src/
+├── app/                 # Next.js app router pages
+├── components/          # React components
+├── lib/                 # Utility functions and modules
+│   ├── ai/             # AI-related functionality
+│   ├── auth/           # Authentication utilities
+│   ├── types/          # TypeScript type definitions
+│   └── utils/          # General utilities
+└── styles/             # Global styles
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- OpenAI for providing the GPT-4 API
+- Mermaid.js for the flowchart visualization
+- The Next.js team for the amazing framework
+- Tailwind CSS for the utility-first CSS framework
